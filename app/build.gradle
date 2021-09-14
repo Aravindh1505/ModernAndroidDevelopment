@@ -1,19 +1,19 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'kotlin-android-extensions'
-    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
-    compileSdk 30
+    compileSdk compile_sdk_verion
 
     defaultConfig {
-        applicationId "com.aravindh.androidcore"
-        minSdk 21
-        targetSdk 30
-        versionCode 1
-        versionName "1.0"
+        applicationId package_name
+        minSdk min_sdk_verion
+        targetSdk target_sdk_verion
+        versionCode version_code
+        versionName version_name
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -26,22 +26,22 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = 1.8
-        targetCompatibility = 1.8
+        sourceCompatibility = java_version
+        targetCompatibility = java_version
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = java_version
     }
 
     buildFeatures {
-        viewBinding = true
+        viewBinding true
     }
 }
 
 dependencies {
-    // dependencies are defined in ext arrays in coroutines-codelab/build.gradle
+    // dependencies are defined in ext arrays in build.gradle
     implementation libraries
-    kapt librariesKapt
+    annotationProcessor librariesAnnotationProcessor
     debugImplementation librariesDebug
 
     testImplementation testLibraries
