@@ -1,4 +1,4 @@
-package com.aravindh.androidcore
+package com.aravindh.androidcore.custom
 
 import android.content.Context
 import androidx.appcompat.app.AlertDialog
