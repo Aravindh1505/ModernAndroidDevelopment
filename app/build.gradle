@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
     id 'androidx.navigation.safeargs.kotlin'
 }
@@ -36,12 +38,16 @@ android {
     buildFeatures {
         viewBinding true
     }
+
+    kapt {
+        correctErrorTypes true
+    }
 }
 
 dependencies {
     // dependencies are defined in ext arrays in build.gradle
     implementation libraries
-    annotationProcessor librariesAnnotationProcessor
+    kapt librariesAnnotationProcessor
     debugImplementation librariesDebug
 
     testImplementation testLibraries

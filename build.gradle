@@ -35,7 +35,7 @@ buildscript {
         def glide_version = '4.11.0'
         def sdp_android ='1.0.6'
 
-        def hilt_android = '2.31.2-alpha'
+        def hilt_android = '2.38.1'
         def hilt_lifecycle_viewmodel = '1.0.0-alpha03'
         def hilt_compiler = '1.0.0'
 
