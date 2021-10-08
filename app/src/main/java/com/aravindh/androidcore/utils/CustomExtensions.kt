@@ -10,7 +10,7 @@ import com.aravindh.androidcore.R
 import com.google.android.material.snackbar.Snackbar
 
 
-fun Activity.showToast(message: String) {
+fun Activity.showToast(message: String?) {
     showToastMessage(this, message)
 }
 
@@ -27,7 +27,7 @@ fun Fragment.showSnackBar(message: String) {
 }
 
 
-fun showToastMessage(context: Context, message: String) {
+fun showToastMessage(context: Context, message: String?) {
     Toast.makeText(context, message, Toast.LENGTH_LONG).show()
 }
 

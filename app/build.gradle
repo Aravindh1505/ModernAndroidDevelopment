@@ -35,12 +35,16 @@ android {
         jvmTarget = java_version
     }
 
-    buildFeatures {
-        viewBinding true
-    }
-
     kapt {
         correctErrorTypes true
+    }
+
+    dataBinding {
+        enabled = true
+    }
+    
+    buildFeatures {
+        viewBinding true
     }
 }
 

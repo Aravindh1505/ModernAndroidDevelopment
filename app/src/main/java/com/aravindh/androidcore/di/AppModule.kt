@@ -3,6 +3,7 @@ package com.aravindh.androidcore.di
 import com.aravindh.androidcore.data.local.LocalDataSource
 import com.aravindh.androidcore.data.remote.RemoteDataSource
 import com.aravindh.androidcore.repository.MainRepository
+import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
@@ -16,7 +17,7 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideGson() = GsonBuilder().create()
+    fun provideGson(): Gson = GsonBuilder().create()
 
     @Singleton
     @Provides
