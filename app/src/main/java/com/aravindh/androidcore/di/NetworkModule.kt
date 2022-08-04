@@ -35,12 +35,6 @@ object NetworkModule {
     @Singleton
     @Provides
     fun provideHttpClient(interceptor: HttpLoggingInterceptor): OkHttpClient {
-
-        val certificatePinner = CertificatePinner.Builder().add(
-            pattern = "",
-            pins = *arrayOf("")
-        ).build()
-
         return OkHttpClient.Builder()
             .connectTimeout(TIME_OUT, TimeUnit.SECONDS)
             .readTimeout(TIME_OUT, TimeUnit.SECONDS)
