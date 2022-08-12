@@ -7,6 +7,8 @@ plugins {
     id 'androidx.navigation.safeargs.kotlin'
 }
 
+apply from: '../gradle/dependencies.gradle'
+
 android {
     compileSdk compile_sdk_verion
 
@@ -42,7 +44,7 @@ android {
     dataBinding {
         enabled = true
     }
-    
+
     buildFeatures {
         viewBinding true
     }
