@@ -1,22 +1,21 @@
 package com.aravindh.androidcore
 
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.*
 import kotlin.concurrent.thread
 
 fun main() = runBlocking {
 
     println("Main Program Start ${Thread.currentThread().name}")
 
-    GlobalScope.launch {
+    val job : Deferred<String> = async {
         println("Thread Program Start ${Thread.currentThread().name}")
-        delay(1000L)
+        delay(2000L)
         println("Thread Program Start ${Thread.currentThread().name}")
+        "Aravindh"
     }
 
-    delay(2000)
+    val output = job.await()
+    println("output: $output")
     println("Main Program End ${Thread.currentThread().name}")
 
 }
