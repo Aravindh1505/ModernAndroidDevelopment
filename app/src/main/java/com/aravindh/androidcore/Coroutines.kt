@@ -4,18 +4,34 @@ import kotlinx.coroutines.*
 import kotlin.concurrent.thread
 
 fun main() = runBlocking {
+    coroutineVsThread()
+}
 
-    println("Main Program Start ${Thread.currentThread().name}")
+private fun CoroutineScope.coroutineVsThread() {
+    repeat(100_00) {
+        launch {
+            delay(1000)
+            print(" @ ")
+        }
 
-    val job : Deferred<String> = async {
-        println("Thread Program Start ${Thread.currentThread().name}")
-        delay(2000L)
-        println("Thread Program Start ${Thread.currentThread().name}")
-        "Aravindh"
+        /*thread {
+            Thread.sleep(1000)
+            print(" @ ")
+        }*/
+    }
+}
+
+suspend fun doWork() = coroutineScope {
+
+    launch {
+        delay(2000)
+        println("World 2")
     }
 
-    val output = job.await()
-    println("output: $output")
-    println("Main Program End ${Thread.currentThread().name}")
+    launch {
+        delay(1000)
+        println("World 1")
+    }
 
+    println("Hello")
 }
