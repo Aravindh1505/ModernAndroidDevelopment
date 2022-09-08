@@ -36,6 +36,7 @@ ext {
     def hilt_android = '2.38.1'
     def hilt_lifecycle_viewmodel = '1.0.0-alpha03'
     def hilt_compiler = '1.0.0'
+    def arch_version = '2.2.0-alpha01'
 
 
     libraries = [
@@ -57,6 +58,10 @@ ext {
             "androidx.lifecycle:lifecycle-extensions:$lifecycle_version",
             "androidx.lifecycle:lifecycle-livedata-ktx:$livedata_version",
             "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version",
+
+            //Lifecycle
+            "androidx.lifecycle:lifecycle-viewmodel-ktx:$arch_version",
+            "androidx.lifecycle:lifecycle-runtime-ktx:$arch_version",
 
             /*// network & serialization
             "com.google.code.gson:gson:$gson_version",
@@ -87,13 +92,13 @@ ext {
     ]
 
     librariesAnnotationProcessor = [
-           /* //Room
-            "androidx.room:room-compiler:$room_version",
-            //Hilt
-            "com.google.dagger:hilt-android-compiler:$hilt_android",
-            "androidx.hilt:hilt-compiler:$hilt_compiler",
-            //Glide
-            "com.github.bumptech.glide:compiler:$glide_version"*/
+            /* //Room
+             "androidx.room:room-compiler:$room_version",
+             //Hilt
+             "com.google.dagger:hilt-android-compiler:$hilt_android",
+             "androidx.hilt:hilt-compiler:$hilt_compiler",
+             //Glide
+             "com.github.bumptech.glide:compiler:$glide_version"*/
     ]
 
     librariesDebug = [
