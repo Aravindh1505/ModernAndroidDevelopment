@@ -1,8 +1,8 @@
 package com.aravindh.androidcore.di
 
-import com.aravindh.androidcore.dagger.Rims
-import com.aravindh.androidcore.dagger.Tires
-import com.aravindh.androidcore.dagger.Wheels
+import com.aravindh.androidcore.factory.Rims
+import com.aravindh.androidcore.factory.Tires
+import com.aravindh.androidcore.factory.Wheels
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.migration.DisableInstallInCheck

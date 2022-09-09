@@ -1,4 +1,4 @@
-package com.aravindh.androidcore.dagger
+package com.aravindh.androidcore.factory
 
 import com.aravindh.androidcore.logger
 import javax.inject.Inject
