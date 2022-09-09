@@ -8,4 +8,9 @@ class Car @Inject constructor(val engine: Engine, val wheels: Wheels) {
     fun drive() {
         logger("Car Driving...")
     }
+
+
+    fun enableRemote(remote: Remote) {
+        remote.remoteStart(this)
+    }
 }
