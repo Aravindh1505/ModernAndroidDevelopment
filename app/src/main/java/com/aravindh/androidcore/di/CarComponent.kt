@@ -1,14 +1,16 @@
 package com.aravindh.androidcore.di
 
 import com.aravindh.androidcore.MainActivity
+import com.aravindh.androidcore.MyApplication
 import com.aravindh.androidcore.factory.Car
 import com.aravindh.androidcore.factory.PetrolEngine
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Named
+import javax.inject.Singleton
 
-
-@Component(modules = [WheelsModule::class, PetrolEngineModule::class])
+@Singleton
+@Component(modules = [WheelsModule::class, PetrolEngineModule::class, AppModule::class])
 interface CarComponent {
 
     fun getCar(): Car
@@ -25,6 +27,5 @@ interface CarComponent {
 
         @BindsInstance
         fun engineCapacity(@Named("engineCapacity") engineCapacity : Int) : Builder
-
     }
 }

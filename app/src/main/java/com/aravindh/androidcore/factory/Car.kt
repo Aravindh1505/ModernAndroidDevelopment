@@ -3,10 +3,12 @@ package com.aravindh.androidcore.factory
 import com.aravindh.androidcore.logger
 import javax.inject.Inject
 
-class Car @Inject constructor(val engine: Engine, val wheels: Wheels) {
+class Car @Inject constructor(private val engine: Engine,
+                              private val wheels: Wheels,
+                              private val driver: Driver) {
 
     fun drive() {
-        logger("Car Driving...")
+        logger("Car Driving driver $driver $this")
     }
 
 
