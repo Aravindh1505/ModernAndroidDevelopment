@@ -11,10 +11,15 @@ import kotlin.properties.Delegates
 
 @Module
 @DisableInstallInCheck
-class DieselEngineModule constructor(private var horsePower : Int) {
+class DieselEngineModule constructor(private var horsePower: Int) {
 
     @Provides
-    fun provideDieselEngine() : Engine {
-        return DieselEngine(horsePower)
+    fun provideHorsePower(): Int {
+        return horsePower
+    }
+
+    @Provides
+    fun provideDieselEngine(dieselEngine: DieselEngine): Engine {
+        return dieselEngine
     }
 }
