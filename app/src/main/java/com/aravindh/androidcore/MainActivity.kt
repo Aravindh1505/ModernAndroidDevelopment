@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.aravindh.androidcore.factory.Car
 import com.aravindh.androidcore.di.DaggerCarComponent
+import com.aravindh.androidcore.di.DieselEngineModule
 import javax.inject.Inject
 
 
@@ -15,7 +16,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val carComponent = DaggerCarComponent.create()
+        val carComponent = DaggerCarComponent.builder()
+            .dieselEngineModule(DieselEngineModule(250))
+            .build()
+
+
         carComponent.inject(this)
 
         car.drive()

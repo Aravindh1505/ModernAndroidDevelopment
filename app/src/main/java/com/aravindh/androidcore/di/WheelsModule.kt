@@ -9,25 +9,26 @@ import dagger.hilt.migration.DisableInstallInCheck
 
 @Module
 @DisableInstallInCheck
-class WheelsModule {
+abstract class WheelsModule {
 
-    @Provides
-    fun provideRims(): Rims {
-        val rims = Rims()
-        rims.getStatus()
-        return rims
+    companion object {
+        @Provides
+        fun provideRims(): Rims {
+            val rims = Rims()
+            rims.getStatus()
+            return rims
+        }
+
+        @Provides
+        fun provideTires(): Tires {
+            val tires = Tires()
+            tires.getStatus()
+            return tires
+        }
+
+        @Provides
+        fun provideWheels(rims: Rims, tires: Tires): Wheels {
+            return Wheels(rims, tires)
+        }
     }
-
-    @Provides
-    fun provideTires(): Tires {
-        val tires = Tires()
-        tires.getStatus()
-        return tires
-    }
-
-    @Provides
-    fun provideWheels(rims: Rims, tires: Tires): Wheels {
-        return Wheels(rims, tires)
-    }
-
 }

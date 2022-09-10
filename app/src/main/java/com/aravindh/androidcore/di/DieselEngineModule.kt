@@ -4,13 +4,17 @@ import com.aravindh.androidcore.factory.DieselEngine
 import com.aravindh.androidcore.factory.Engine
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
 import dagger.hilt.migration.DisableInstallInCheck
+import kotlin.properties.Delegates
 
 
 @Module
 @DisableInstallInCheck
-abstract class DieselEngineModule {
+class DieselEngineModule constructor(private var horsePower : Int) {
 
-    @Binds
-    abstract fun bindDieselEngine(dieselEngine: DieselEngine): Engine
+    @Provides
+    fun provideDieselEngine() : Engine {
+        return DieselEngine(horsePower)
+    }
 }
