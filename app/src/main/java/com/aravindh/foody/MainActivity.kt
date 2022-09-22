@@ -1,4 +1,4 @@
-package com.aravindh.androidcore
+package com.aravindh.foody
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
