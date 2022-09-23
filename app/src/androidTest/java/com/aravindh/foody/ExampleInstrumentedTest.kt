@@ -1,4 +1,4 @@
-package com.aravindh.androidcore
+package com.aravindh.foody
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

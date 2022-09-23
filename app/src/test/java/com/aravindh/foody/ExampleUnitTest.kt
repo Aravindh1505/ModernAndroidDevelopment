@@ -1,4 +1,4 @@
-package com.aravindh.androidcore
+package com.aravindh.foody
 
 import org.junit.Test
 
