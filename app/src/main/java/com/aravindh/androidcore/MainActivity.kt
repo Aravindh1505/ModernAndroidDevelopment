@@ -5,74 +5,56 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.aravindh.androidcore.ui.theme.MyApplicationTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Greeting("Android")
+            MyApplicationTheme {
+                Surface(color = MaterialTheme.colorScheme.background) {
+                    MainScreen()
+                }
+            }
         }
     }
 }
 
 @Composable
-fun Greeting(name: String) {
-    Column(
-        Modifier
-            .fillMaxWidth()
-            .wrapContentHeight()
-            .background(color = Color.White)
-            .padding(5.dp),
-        horizontalAlignment = Alignment.Start,
+fun MainScreen() {
+    Surface(
+        color = Color.White,
+        modifier = Modifier.fillMaxSize()
     ) {
-        CustomText(text = "Hello $name!")
-        CustomText(text = "Hello $name!")
-        CustomText(text = "Hello $name!")
-        CustomText(text = "Hello $name!")
-        CustomText(text = "Hello $name!")
-        CustomText(text = "Hello $name!")
+        Surface(
+            modifier = Modifier.wrapContentSize(
+                align = Alignment.Center
+            )
+        ) {
+            Text(
+                text = "Welcome!",
+                style = MaterialTheme.typography.headlineLarge,
+            )
+        }
 
     }
-
 }
 
-@Composable
-fun CustomText(text: String) {
-    Text(
-        text = "$text!",
-        modifier = Modifier
-            .padding(5.dp)
-            .clickable {
-                println("Clicked!")
-            }
-    )
-}
 
-@Preview(showBackground = true)
+@Preview
 @Composable
-fun DefaultUI() {
-    Greeting("Android")
-//    CustomText(text = "Hello !")
-//    CustomButton()
-}
-
-@Composable
-fun CustomButton() {
-    Button(onClick = {
-        println("Clicked..")
-    }) {
-        CustomText(text = "Hello!")
-    }
+fun MainScreenPreview() {
+    MainScreen()
 }
