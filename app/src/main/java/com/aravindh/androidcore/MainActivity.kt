@@ -38,16 +38,33 @@ fun MainScreen() {
         color = Color.White,
         modifier = Modifier.fillMaxSize()
     ) {
-        Surface(
-            modifier = Modifier.wrapContentSize(
-                align = Alignment.Center
-            )
+        Column(
+            verticalArrangement = Arrangement.SpaceEvenly,
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(
-                text = "Welcome!",
-                style = MaterialTheme.typography.headlineLarge,
-            )
+            Row(
+                horizontalArrangement = Arrangement.SpaceAround,
+                verticalAlignment = Alignment.Top,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                HorizontalBar(Color.Red)
+                HorizontalBar(Color.Green)
+            }
+            HorizontalBar(Color.Yellow)
+            HorizontalBar(Color.Black)
+            HorizontalBar(Color.Blue)
         }
+    }
+}
+
+@Composable
+private fun HorizontalBar(color: Color) {
+    Surface(
+        color = color,
+        modifier = Modifier
+            .height(100.dp)
+            .width(100.dp)
+    ) {
 
     }
 }
