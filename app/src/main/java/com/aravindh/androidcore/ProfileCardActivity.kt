@@ -1,6 +1,5 @@
 package com.aravindh.androidcore
 
-import android.graphics.Bitmap
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -38,7 +37,9 @@ fun MainScreen() {
         modifier = Modifier.fillMaxSize(),
         color = Color.LightGray
     ) {
-        ProfileCard()
+        Column() {
+            ProfileCard()
+        }
     }
 }
 
@@ -46,10 +47,11 @@ fun MainScreen() {
 fun ProfileCard() {
     Card(
         modifier = Modifier
-            .padding(16.dp)
+            .padding(8.dp)
             .fillMaxWidth()
             .wrapContentHeight(align = Alignment.Top),
         elevation = CardDefaults.cardElevation(8.dp),
+        colors = CardDefaults.cardColors(containerColor = Color.White)
     ) {
         Row(
             modifier = Modifier
@@ -73,7 +75,7 @@ fun ProfileImage() {
             .padding(2.dp),
         shape = CircleShape,
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
-        border = BorderStroke(width = 1.dp, color = Color.Green)
+        border = BorderStroke(width = 1.dp, color = Color.Green),
     ) {
         Image(
             painterResource(R.drawable.ic_profile),
@@ -86,7 +88,24 @@ fun ProfileImage() {
 
 @Composable
 fun ProfileContent() {
-    Text(text = "Aravindh Samidurai")
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .wrapContentHeight()
+    ) {
+        Text(
+            text = "Aravindh Samidurai",
+            style = MaterialTheme.typography.titleMedium,
+            color = Color.Black
+        )
+
+        Text(
+            text = "Active now",
+            style = MaterialTheme.typography.bodySmall,
+            color = Color.DarkGray
+        )
+    }
+
 }
 
 @Preview
