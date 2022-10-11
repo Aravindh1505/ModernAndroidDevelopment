@@ -37,7 +37,7 @@ fun MainScreen() {
         modifier = Modifier.fillMaxSize(),
         color = Color.LightGray
     ) {
-        Column() {
+        Column {
             ProfileCard()
         }
     }
@@ -111,5 +111,7 @@ fun ProfileContent() {
 @Preview
 @Composable
 fun MainPreview() {
-    MainScreen()
+    MyApplicationTheme {
+        MainScreen()
+    }
 }
