@@ -7,7 +7,10 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.*
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -17,6 +20,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.aravindh.androidcore.ui.theme.MyApplicationTheme
+import com.aravindh.androidcore.ui.theme.MyTheme
 
 
 class ProfileCardActivity : ComponentActivity() {
@@ -75,10 +79,10 @@ fun ProfileImage() {
             .padding(2.dp),
         shape = CircleShape,
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
-        border = BorderStroke(width = 1.dp, color = Color.Green),
+        border = BorderStroke(width = 1.dp, color = MyTheme.colors.profileCircle),
     ) {
         Image(
-            painterResource(R.drawable.ic_profile),
+            painterResource(MyTheme.icons.ic_profile),
             contentDescription = "Profile Picture",
             contentScale = ContentScale.Crop,
             modifier = Modifier.fillMaxSize()
@@ -95,13 +99,13 @@ fun ProfileContent() {
     ) {
         Text(
             text = "Aravindh Samidurai",
-            style = MaterialTheme.typography.titleMedium,
+            style = MyTheme.typography.title4,
             color = Color.Black
         )
 
         Text(
             text = "Active now",
-            style = MaterialTheme.typography.bodySmall,
+            style = MyTheme.typography.body3,
             color = Color.DarkGray
         )
     }

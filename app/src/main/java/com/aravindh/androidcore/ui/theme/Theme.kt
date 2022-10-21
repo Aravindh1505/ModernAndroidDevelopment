@@ -46,3 +46,4 @@ fun MyApplicationTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Com
         content = content
     )
 }
+
