@@ -14,11 +14,16 @@ import retrofit2.converter.gson.GsonConverterFactory
 class NetworkModule {
 
     @Provides
-    fun provideLoginService(): LoginService {
+    fun provideLoginService(gson: Gson): LoginService {
         return Retrofit.Builder()
             .baseUrl("https://jsonplaceholder.typicode.com")
-            .addConverterFactory(GsonConverterFactory.create(Gson()))
+            .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
             .create(LoginService::class.java)
+    }
+
+    @Provides
+    fun provideGson(): Gson {
+        return Gson()
     }
 }
