@@ -7,10 +7,10 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-class WheelsModule {
+class WheelsModule(private val horsePower : Int) {
 
     @Provides
-    fun provideRims(): Rims = Rims()
+    fun provideRims(): Rims = Rims(horsePower)
 
     @Provides
     fun provideTires(): Tires {
