@@ -1,0 +1,25 @@
+package com.aravindh.androidcore.vehicle
+
+import com.aravindh.androidcore.vehicle.engine.Engine
+import javax.inject.Inject
+import javax.inject.Named
+
+class Car @Inject constructor(
+    private val wheels: Wheels,
+    @Named("dieselEngine") private val engine: Engine
+) {
+
+    fun drive() {
+        engine.engineType()
+        println("Driving...")
+    }
+
+    @Inject
+    fun remoteStart(remote: Remote) {
+        remote.remoteStart(this)
+    }
+
+    fun warrantyStartDate(): String = wheels.warrantyStartDate()
+
+    fun engineType(): String = engine.engineType()
+}
