@@ -5,16 +5,14 @@ import com.aravindh.androidcore.vehicle.engine.Engine
 import com.aravindh.androidcore.vehicle.engine.PetrolEngine
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
+import javax.inject.Inject
 import javax.inject.Named
 
 @Module
 abstract class EngineModule {
 
     @Binds
-    @Named("petrolEngine")
-    abstract fun bindPetrolEngine(engine: PetrolEngine): Engine
+    abstract fun providePetrolEngine(engine: PetrolEngine) : Engine
 
-    @Binds
-    @Named("dieselEngine")
-    abstract fun bindDieselEngine(engine: DieselEngine) : Engine
 }

@@ -1,16 +1,17 @@
 package com.aravindh.androidcore.vehicle
 
 import com.aravindh.androidcore.vehicle.engine.Engine
+import com.aravindh.androidcore.vehicle.engine.PetrolEngine
 import javax.inject.Inject
 import javax.inject.Named
 
 class Car @Inject constructor(
     private val wheels: Wheels,
-    @Named("dieselEngine") private val engine: Engine
+    private val engine: PetrolEngine
 ) {
 
     fun drive() {
-        engine.engineType()
+        engine.start()
         println("Driving...")
     }
 

@@ -1,6 +1,5 @@
 package com.aravindh.androidcore.vehicle
 
-class Rims(val horsePower : Int) {
+class Rims() {
 
-    val amount = 1000
 }
