@@ -1,4 +1,6 @@
 package com.aravindh.androidcore.data.local
 
-class UserLocalDataSource {
+import javax.inject.Inject
+
+class UserLocalDataSource @Inject constructor() {
 }
