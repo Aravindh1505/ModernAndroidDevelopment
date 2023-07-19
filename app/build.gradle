@@ -48,14 +48,19 @@ android {
     buildFeatures {
         viewBinding true
     }
+    namespace 'com.aravindh.androidcore'
 }
 
 dependencies {
     // dependencies are defined in ext arrays in build.gradle
     implementation libraries
+    testImplementation 'org.junit.jupiter:junit-jupiter'
     kapt librariesAnnotationProcessor
     debugImplementation librariesDebug
 
     testImplementation testLibraries
     androidTestImplementation androidTestLibraries
+
+    implementation "io.reactivex.rxjava2:rxjava:2.1.6"
+    implementation "io.reactivex.rxjava2:rxandroid:2.0.1"
 }

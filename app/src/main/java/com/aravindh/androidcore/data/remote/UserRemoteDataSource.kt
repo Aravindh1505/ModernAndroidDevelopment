@@ -8,4 +8,6 @@ class UserRemoteDataSource @Inject constructor(
     private val apiService: ApiService
 ) {
 
+    suspend fun getQuestions() = apiService.getQuestions()
+
 }
